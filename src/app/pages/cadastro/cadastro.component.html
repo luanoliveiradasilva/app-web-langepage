@@ -1,0 +1,45 @@
+<section>
+  <form class="formulario" (ngSubmit)="cadastrarPessoa()">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2 class="formulario__titulo">Sistema de cadastro.</h2>
+          <div class="form-field">
+            <div class="form-field__image">
+              <input
+                class="form-field__input"
+                type="file"
+                accept="image/png, image/jpeg"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="row">
+            <div class="col">
+              <div class="form-field">
+                <label class="form-field__label">Nome</label>
+                <input class="form-field__input" [(ngModel)]="nome" type="text" name="nome" placeholder="Digite o seu nome"/>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-field">
+                <label class="form-field__label">CPF</label>
+                <input matInput type="text" class="form-field__input" [mask]="getCpfCnpjMask()" [(ngModel)]="cpf" name="cpf" placeholder="Digite o seu CPF" />
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-field">
+                <label class="form-field__label">Data de nascimento</label>
+                <input class="form-field__input" [(ngModel)]="dataDeNascimento" type="date" name="data"/>
+              </div>
+            </div>
+          </div>
+          <div class=".botao-wrapper">
+            <button class="botao">Cadastrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</section>
